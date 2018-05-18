@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CustomMessageConverter extends Jackson2JsonMessageConverter {
-    private @Value("${ch.hevs.sdi.helloamqp.content-type}") String contentType;
+    private @Value("${ch.hevs.vleiot.IslandOnCloud.content-type}") String contentType;
+
     @Override
-    public Object fromMessage(Message message, Object conversionHint) throws
-            MessageConversionException {
+    public Object fromMessage(Message message, Object conversionHint) throws MessageConversionException {
         message.getMessageProperties().setContentType(contentType);
         return super.fromMessage(message, conversionHint);
     }
