@@ -14,13 +14,13 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ThingListenter {
-    private final Log log = LogFactory.getLog(ThingListenter.class);
+public class ThingListener {
+    private final Log log = LogFactory.getLog(ThingListener.class);
 
     private final RabbitTemplate rabbitTemplate;
 
     @Autowired
-    public ThingListenter(final RabbitTemplate rabbitTemplate) {
+    public ThingListener(final RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
     @RabbitListener(bindings = @QueueBinding(
